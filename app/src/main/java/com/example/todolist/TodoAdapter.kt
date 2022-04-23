@@ -4,6 +4,7 @@ import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.data.Todo
@@ -49,15 +50,13 @@ class TodoAdapter(
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         var curTodo = todos[position]
-        val tvTask = binding.tvTasks
-        val checkBox =  binding.checkBox
 
         holder.itemView.apply {
-            tvTask.text = curTodo.title
-            checkBox.isChecked = curTodo.isChecked
-            toggleStrikeThrough(tvTask,curTodo.isChecked )
-            checkBox.setOnCheckedChangeListener { _, isChecked ->
-                toggleStrikeThrough(tvTask, isChecked)
+            findViewById<TextView>(R.id.tvTasks).text = curTodo.title
+            findViewById<CheckBox>(R.id.checkBox).isChecked = curTodo.isChecked
+            toggleStrikeThrough(findViewById<TextView>(R.id.tvTasks),curTodo.isChecked )
+            findViewById<CheckBox>(R.id.checkBox).setOnCheckedChangeListener { _, isChecked ->
+                toggleStrikeThrough(findViewById<TextView>(R.id.tvTasks), isChecked)
                 curTodo.isChecked = !curTodo.isChecked
             }
         }
