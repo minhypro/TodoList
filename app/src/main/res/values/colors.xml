@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#124c81</color>
+    <color name="primary_variant">#4e6190</color>
+    <color name="secondary">#d6542c</color>
+    <color name="secondary_variant">#eda28a</color>
+    <color name="four">#99a8bb</color>
+    <color name="five">#3c345c</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+
+</resources>
